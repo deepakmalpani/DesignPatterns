@@ -1,8 +1,9 @@
 public class TransactionService
 {
+    private Logger _logger = Logger.Instance;
     public void TransferMoney()
     {
-        Logger logger = new Logger();
-        logger.Log("Money has been transferred!");
+        Console.WriteLine(_logger.GetHashCode());
+        _logger.Log("Money has been transferred!");
     }
 }

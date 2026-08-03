@@ -1,8 +1,9 @@
 public class AccountService
 {
+    private Logger _logger = Logger.Instance;
     public void CreateAccount()
     {
-        Logger logger = new Logger();
-        logger.Log("Account Created!");
+        Console.WriteLine(_logger.GetHashCode());
+        _logger.Log("Account Created!");
     }
 }

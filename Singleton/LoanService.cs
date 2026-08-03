@@ -1,8 +1,9 @@
 public class LoanService
 {
+    private Logger _logger = Logger.Instance;
     public void ApproveLoan()
     {
-        Logger logger = new Logger();
-        logger.Log("Loan has been approved!");
+        Console.WriteLine(_logger.GetHashCode());
+        _logger.Log("Loan has been approved!");
     }
 }
