@@ -1,22 +1,22 @@
 class NotificationFactory
 {
-    public static INotification Create(string type)
+    public static INotification Create(NotificationType type)
     {
-        if(string.Equals(type, nameof(NotificationType.Email), StringComparison.OrdinalIgnoreCase))
+        if(type == NotificationType.Email)
         {
             return new EmailNotification();
         }
-        else if(string.Equals(type, nameof(NotificationType.SMS), StringComparison.OrdinalIgnoreCase))
+        else if(type == NotificationType.SMS)
         {
             return new SmsNotification();
         }
-        else if(string.Equals(type, nameof(NotificationType.Push), StringComparison.OrdinalIgnoreCase))
+        else if(type == NotificationType.Push)
         {
             return new PushNotification();
         }
         else
         {
-            throw new Exception("Unknown notification type provided");
+            throw new ArgumentException("Unknown notification type provided");
         }
     }
 }

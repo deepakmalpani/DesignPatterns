@@ -1,15 +1,9 @@
-public class NotificationService
+class NotificationService
 {
-    public void SendNotification(string type, string message)
+    public void SendNotification(NotificationType notificationType, string message)
     {
-        try
-        {
-            INotification notification = NotificationFactory.Create(type);
-            notification.Send(message);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
+        INotification notification = NotificationFactory.Create(notificationType);
+        notification.Send(message);
+
     }
 }
