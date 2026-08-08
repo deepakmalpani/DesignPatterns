@@ -2,17 +2,17 @@ public class NotificationService
 {
     public void SendNotification(string type, string message)
     {
-        if(type == "email")
+        if(string.Equals(type, nameof(NotificationType.Email), StringComparison.OrdinalIgnoreCase))
         {
             EmailNotification emailNotification = new EmailNotification();
             emailNotification.Send(message);
         }
-        else if(type == "sms")
+        else if(string.Equals(type, nameof(NotificationType.SMS), StringComparison.OrdinalIgnoreCase))
         {
             SmsNotification smsNotification = new SmsNotification();
             smsNotification.Send(message);
         }
-        else if(type == "push")
+        else if(string.Equals(type, nameof(NotificationType.Push), StringComparison.OrdinalIgnoreCase))
         {
             PushNotification pushNotification = new PushNotification();
             pushNotification.Send(message);
