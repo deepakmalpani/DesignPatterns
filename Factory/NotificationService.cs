@@ -2,24 +2,14 @@ public class NotificationService
 {
     public void SendNotification(string type, string message)
     {
-        if(string.Equals(type, nameof(NotificationType.Email), StringComparison.OrdinalIgnoreCase))
+        try
         {
-            INotification emailNotification = new EmailNotification();
-            emailNotification.Send(message);
+            INotification notification = NotificationFactory.Create(type);
+            notification.Send(message);
         }
-        else if(string.Equals(type, nameof(NotificationType.SMS), StringComparison.OrdinalIgnoreCase))
+        catch (Exception e)
         {
-            INotification smsNotification = new SmsNotification();
-            smsNotification.Send(message);
-        }
-        else if(string.Equals(type, nameof(NotificationType.Push), StringComparison.OrdinalIgnoreCase))
-        {
-            INotification pushNotification = new PushNotification();
-            pushNotification.Send(message);
-        }
-        else
-        {
-            Console.WriteLine("Unknown type, allowed types: email, sms, push");
+            Console.WriteLine(e);
         }
     }
 }
