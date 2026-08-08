@@ -4,17 +4,17 @@ public class NotificationService
     {
         if(string.Equals(type, nameof(NotificationType.Email), StringComparison.OrdinalIgnoreCase))
         {
-            EmailNotification emailNotification = new EmailNotification();
+            INotification emailNotification = new EmailNotification();
             emailNotification.Send(message);
         }
         else if(string.Equals(type, nameof(NotificationType.SMS), StringComparison.OrdinalIgnoreCase))
         {
-            SmsNotification smsNotification = new SmsNotification();
+            INotification smsNotification = new SmsNotification();
             smsNotification.Send(message);
         }
         else if(string.Equals(type, nameof(NotificationType.Push), StringComparison.OrdinalIgnoreCase))
         {
-            PushNotification pushNotification = new PushNotification();
+            INotification pushNotification = new PushNotification();
             pushNotification.Send(message);
         }
         else
