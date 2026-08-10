@@ -1,9 +1,9 @@
 class ReportBuilder
 {
-    private string _Title;
-    private string _Author;
-    private string _PageSize = "";
-    private string _Orientation = "";
+    private string _Title = "";
+    private string _Author = "";
+    private string _PageSize = "A4";
+    private string _Orientation = "Portrait";
     private string _Watermark = "";
     private string _Header = "";
     private string _Footer = "";
@@ -75,6 +75,30 @@ class ReportBuilder
     }
     public Report Build()
     {
+        Validate();
         return new Report(_Title, _Author, _PageSize, _Orientation, _Watermark, _Header, _Footer, _IncludeCharts, _IncludeTableOfContents, _IncludePageNumbers, _FontSize, _FontFamily);
+    }
+    private void Validate()
+    {
+        if (string.IsNullOrWhiteSpace(_Title))
+        {
+            throw new InvalidOperationException("Cannot build Report: Title must be specified");
+        }
+        if (string.IsNullOrWhiteSpace(_Author))
+        {
+            throw new InvalidOperationException("Cannot build Report: Author must be specified");
+        }
+        if (_FontSize < 8 || _FontSize > 72)
+        {
+            throw new InvalidOperationException("Cannot build Report: Font size must be between 8 and 72");
+        }
+        if (!(_Orientation == "Landscape" || _Orientation == "Portrait"))
+        {
+            throw new InvalidOperationException("Cannot build Report: Orientation can only be Landscape or Portrait");
+        }
+        if (!(_PageSize == "A4" || _PageSize == "A3" || _PageSize == "Letter"))
+        {
+            throw new InvalidOperationException("Cannot build Report: PageSize can only be A4, A3 or Letter");
+        }
     }
 }
