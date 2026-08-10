@@ -1,32 +1,32 @@
 class Report
 {
-    private string _Title;
-    private string _Author;
-    private string _PageSize;
-    private string _Orientation;
-    private string _Watermark;
-    private string _Header;
-    private string _Footer;
-    private bool _IncludeCharts;
-    private bool _IncludeTableOfContents;
-    private bool _IncludePageNumbers;
-    private int _FontSize;
-    private string _FontFamily;
+    private string _title;
+    private string _author;
+    private string _pagesize;
+    private string _orientation;
+    private string _watermark;
+    private string _header;
+    private string _footer;
+    private bool _includeCharts;
+    private bool _includeTableOfContents;
+    private bool _includePageNumbers;
+    private int _fontSize;
+    private string _fontFamily;
 
-    public Report(string Title, string Author, string PageSize, string Orientation, string Watermark, string Header, string Footer, bool IncludeCharts, bool IncludeTableOfContents, bool IncludePageNumbers, int FontSize, string FontFamily)
+    public Report(string title, string Author, string PageSize, string Orientation, string Watermark, string Header, string Footer, bool IncludeCharts, bool IncludeTableOfContents, bool IncludePageNumbers, int FontSize, string FontFamily)
     {
-        _Title = Title;
-        _Author = Author;
-        _PageSize = PageSize;
-        _Orientation = Orientation;
-        _Watermark = Watermark;
-        _Header = Header;
-        _Footer = Footer;
-        _IncludeCharts = IncludeCharts;
-        _IncludeTableOfContents = IncludeTableOfContents;
-        _IncludePageNumbers = IncludePageNumbers;
-        _FontSize = FontSize;
-        _FontFamily = FontFamily;
+        _title = title;
+        _author = Author;
+        _pagesize = PageSize;
+        _orientation = Orientation;
+        _watermark = Watermark;
+        _header = Header;
+        _footer = Footer;
+        _includeCharts = IncludeCharts;
+        _includeTableOfContents = IncludeTableOfContents;
+        _includePageNumbers = IncludePageNumbers;
+        _fontSize = FontSize;
+        _fontFamily = FontFamily;
     }
 
 }
