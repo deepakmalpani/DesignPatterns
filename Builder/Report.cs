@@ -13,7 +13,7 @@ class Report
     private int _FontSize;
     private string _FontFamily;
 
-    public Report(string Title, string Author, string PageSize = "", string Orientation = "", string Watermark = "", string Header = "", string Footer = "", bool IncludeCharts = false, bool IncludeTableOfContents = false, bool IncludePageNumbers = false, int FontSize = 12, string FontFamily = "Arial")
+    public Report(string Title, string Author, string PageSize, string Orientation, string Watermark, string Header, string Footer, bool IncludeCharts, bool IncludeTableOfContents, bool IncludePageNumbers, int FontSize, string FontFamily)
     {
         _Title = Title;
         _Author = Author;

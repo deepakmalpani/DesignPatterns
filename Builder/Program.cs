@@ -1,30 +1,30 @@
-﻿new Report(
-    "Monthly Sales",
-    "Finance Team",
-    "A4",
-    "Landscape",
-    "Confidential",
-    "Monthly Sales Report",
-    "Internal Use Only",
-    true
-);
+﻿var monthlyReport = new ReportBuilder()
+                        .SetTitle("Monthly Sales")
+                        .SetAuthor("Finance Team")
+                        .SetPageSize("A4")
+                        .SetOrientation("Landscape")
+                        .SetWatermark("Confidential")
+                        .SetHeader("Monthly Sales Report")
+                        .SetFooter("Internal Use Only")
+                        .SetIncludeCharts(false)
+                        .Build();
 
-new Report(
-    "Monthly Sales",
-    "Finance Team",
-    "A4",
-    "Landscape",
-    "Confidential",
-    "Monthly Sales Report",
-    "Internal Use Only",
-    true,
-    true,
-    true,
-    14,
-    "Mono"
-);
+var dailyReport = new ReportBuilder()
+                        .SetTitle("Daily Sales")
+                        .SetAuthor("IT Team")
+                        .SetPageSize("A4")
+                        .SetOrientation("Landscape")
+                        .SetWatermark("Confidential")
+                        .SetHeader("Daily Sales Report")
+                        .SetFooter("Internal Use Only")
+                        .SetIncludeCharts(true)
+                        .SetIncludeTableOfContents(true)
+                        .SetIncludePageNumbers(true)
+                        .SetFontSize(14)
+                        .SetFontFamily("Mono")
+                        .Build();
 
-new Report(
-    "Annual Sales",
-    "Accounting Team"
-);
+var annualReport = new ReportBuilder()
+                        .SetTitle("Annual Sales")
+                        .SetAuthor("Accounting Team")
+                        .Build();
