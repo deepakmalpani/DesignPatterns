@@ -5,7 +5,7 @@ class CheckoutService
     {
         _paymentProcessor = paymentProcessor;
     }
-    public void Checkout(decimal amount)
+    public void Checkout(double amount)
     {
         _paymentProcessor.Pay(amount);
     }

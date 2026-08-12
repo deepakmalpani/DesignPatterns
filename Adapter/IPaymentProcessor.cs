@@ -1,4 +1,4 @@
-interface IPaymentProcessor
+public interface IPaymentProcessor
 {
-    void Pay(decimal amount);
+    public void Pay(double amount);
 }
